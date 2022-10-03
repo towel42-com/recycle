@@ -42,7 +42,7 @@ option( gtest_force_shared_crt "Use shared ( DLL ) run-time lib even when Google
 
 set_property( GLOBAL PROPERTY USE_FOLDERS ON )
 
-file( REAL_PATH ~/bin/Recycle CMAKE_INSTALL_PREFIX EXPAND_TILDE)
+file( REAL_PATH ~/bin/recycle CMAKE_INSTALL_PREFIX EXPAND_TILDE)
 
 SET( SAB_ENABLE_TESTING ON CACHE STRING OFF FORCE )
 SET( SABUTILS_DLL OFF )
