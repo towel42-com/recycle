@@ -36,10 +36,6 @@ if ( NOT DEPLOYQT_EXECUTABLE )
     message( FATAL_ERROR "DEPLOYQT_EXECUTABLE not set" )
 endif()
 
-if ( NOT OPENSSL_DEPLOY_BINDIR )
-    message( FATAL_ERROR "OPENSSL_DEPLOY_BINDIR not set" )
-endif()
-
 get_filename_component( QTDIR ${DEPLOYQT_EXECUTABLE} DIRECTORY )
 
 set ( DEBUG_PATH 

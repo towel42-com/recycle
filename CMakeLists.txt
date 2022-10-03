@@ -34,12 +34,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 find_package(Threads)
 find_package(Qt5 COMPONENTS Core Widgets Multimedia REQUIRED)
 find_package(Deploy REQUIRED)
-find_package(CheckOpenSSL REQUIRED)
 find_package(AddUnitTest REQUIRED)
 
 include( VersionInfo.cmake )
-
-CheckOpenSSL()
 
 option( gtest_force_shared_crt "Use shared ( DLL ) run-time lib even when Google Test is built as static lib." ON ) 
 
@@ -47,7 +44,7 @@ set_property( GLOBAL PROPERTY USE_FOLDERS ON )
 
 file( REAL_PATH ~/bin/Recycle CMAKE_INSTALL_PREFIX EXPAND_TILDE)
 
-SET( SAB_ENABLE_TESTING ON CACHE bool OFF FORCE )
+SET( SAB_ENABLE_TESTING ON CACHE STRING OFF FORCE )
 SET( SABUTILS_DLL OFF )
 SET( MKVUTILS OFF )
 SET( GIFSUPPORT OFF )
