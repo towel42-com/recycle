@@ -21,12 +21,10 @@
 // SOFTWARE.
 
 #include "Version.h"
-#include "SABUtils/FileUtils.h"
+#include "SABUtils/MoveToTrash.h"
 
 #include <QCoreApplication>
 #include <QCommandLineParser>
-#include <QDir>
-#include <QDebug>
 
 int main( int argc, char ** argv )
 {

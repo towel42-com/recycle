@@ -16,5 +16,5 @@ set(qtproject_QRC
 )
 
 set( project_pub_DEPS
-        SABUtils
+    SABUtils
 )
