@@ -46,10 +46,14 @@ int main( int argc, char ** argv )
     QCommandLineOption deleteOnRecycle( QStringList() << "delete_on_recycle_failure", "Delete on recycle failure", "" );
     parser.addOption( deleteOnRecycle );
 
+    QCommandLineOption force( QStringList() << "f" << "force", "Force delete, ignore non-existent files and arguments, never prompt", "" );
+    parser.addOption( force );
+
     parser.addPositionalArgument( "", "Paths to recycle" );
     parser.process( appl );
 
     options->fDeleteOnRecycleFailure = parser.isSet( deleteOnRecycle );
+    options->fForce = parser.isSet( force );
     auto args = parser.positionalArguments();
     for ( auto && ii : args )
         NSABUtils::NFileUtils::moveToTrash( ii, options );
