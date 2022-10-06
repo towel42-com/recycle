@@ -47,10 +47,14 @@ int main( int argc, char ** argv )
     QCommandLineOption force( QStringList() << "f" << "force", "Force delete, ignore non-existent files and arguments, never prompt", "" );
     parser.addOption( force );
 
+    QCommandLineOption verbose( QStringList() << "verbose", "Give detailed information on files or directories being recycled", "" );
+    parser.addOption( verbose );
+
     parser.addPositionalArgument( "", "Paths to recycle" );
     parser.process( appl );
 
     options->fDeleteOnRecycleFailure = parser.isSet( deleteOnRecycle );
+    options->fVerbose = parser.isSet( verbose );
     options->fForce = parser.isSet( force );
     auto args = parser.positionalArguments();
     for ( auto && ii : args )
