@@ -38,11 +38,6 @@ endif()
 
 get_filename_component( QTDIR ${DEPLOYQT_EXECUTABLE} DIRECTORY )
 
-set ( DEBUG_PATH 
-        "%PATH%"
-        "$<TARGET_FILE_DIR:SABUtils>"
-        "${QTDIR}"
-        )
 set_target_properties( ${PROJECT_NAME} PROPERTIES FOLDER Apps 
                                     VS_DEBUGGER_WORKING_DIRECTORY "$<TARGET_FILE_DIR:recycle>" 
                                     VS_DEBUGGER_COMMAND "$<TARGET_FILE:recycle>" 
