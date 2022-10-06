@@ -27,8 +27,3 @@ endif()
 
 include( ${CMAKE_SOURCE_DIR}/SABUtils/Project.cmake )
 
-SET( project_pub_DEPS
-     Qt5::Network
-     ${project_pub_DEPS}
-     )
-
