@@ -59,10 +59,7 @@ int main( int argc, char ** argv )
     auto args = parser.positionalArguments();
     for ( auto && ii : args )
     {
-        auto absPath = QDir::toNativeSeparators( QDir::current().absoluteFilePath( ii ) );
-        if ( QFileInfo( absPath ).exists() )
-            int xyz = 0;
-        NSABUtils::NFileUtils::moveToTrash( absPath, options );
+        NSABUtils::NFileUtils::moveToTrash( ii, options );
     }
 
     return 0;
