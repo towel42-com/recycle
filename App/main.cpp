@@ -57,10 +57,11 @@ int main( int argc, char ** argv )
     options->fVerbose = parser.isSet( verbose );
     options->fForce = parser.isSet( force );
     auto args = parser.positionalArguments();
+    bool aOK = true;
     for ( auto && ii : args )
     {
-        NSABUtils::NFileUtils::moveToTrash( ii, options );
+        aOK = NSABUtils::NFileUtils::moveToTrash( ii, options ) && aOK;
     }
 
-    return 0;
+    return aOK ? 0 : -1;
 }
