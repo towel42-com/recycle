@@ -25,7 +25,7 @@
 
 #include <QCoreApplication>
 #include <QCommandLineParser>
-
+#include <QDir>
 int main( int argc, char ** argv )
 {
     QCoreApplication appl( argc, argv );
@@ -58,7 +58,12 @@ int main( int argc, char ** argv )
     options->fForce = parser.isSet( force );
     auto args = parser.positionalArguments();
     for ( auto && ii : args )
-        NSABUtils::NFileUtils::moveToTrash( ii, options );
+    {
+        auto absPath = QDir::toNativeSeparators( QDir::current().absoluteFilePath( ii ) );
+        if ( QFileInfo( absPath ).exists() )
+            int xyz = 0;
+        NSABUtils::NFileUtils::moveToTrash( absPath, options );
+    }
 
     return 0;
 }
